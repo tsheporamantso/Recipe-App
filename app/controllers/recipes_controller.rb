@@ -4,6 +4,11 @@ class RecipesController < ApplicationController
    @recipes = @user.recipes 
   end
 
+  def show
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
+  end
+
   def new
     @user = current_user
     @recipe = @user.recipes.build
