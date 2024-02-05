@@ -12,7 +12,17 @@
   margin: 0 80px;
 }
 
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
 p {
   font-size: 20px;
   font-weight: 700;
 }
+
+

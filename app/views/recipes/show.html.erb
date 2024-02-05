@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag 'recipe' %>
+
+<div class="container">
+  <h1>Recipes</h1>
+  <div>
+    <h2><%= @recipe.name %></h2>
+  </div>
+  <div class='recipe-info'>
+    <p>preparation time:<%= @recipe.preparation_time %></p>
+    <p>cooking time:<%= @recipe.cooking_time %></p>
+    <p><%= @recipe.description %></p>
+  </div>
+  <div>
+    <%= link_to 'Generate Shopping List' %>
+    <%= link_to 'Add ingredients' %>
+  </div>
+</div>
