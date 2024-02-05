@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def index
-   @user = User.find(params[:user_id])
-   @recipes = @user.recipes 
+    @user = User.find(params[:user_id])
+    @recipes = @user.recipes
   end
 
   def show
@@ -32,6 +32,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :public)   
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :public)
   end
 end
