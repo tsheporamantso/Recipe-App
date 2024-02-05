@@ -1,0 +1,8 @@
+<%= stylesheet_link_tag 'registration' %>
+
+<div class="welcome">Welcome to our Recipe App Dear:
+    <% if user_signed_in? %>
+        <%= current_user.name %> 👋😊
+    <% end %>
+</div>
+
