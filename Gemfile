@@ -2,6 +2,14 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Use Cancancan to authorize users
+gem 'cancancan'
+
+# Use Devise to authenticate users
+gem 'devise'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
 
@@ -47,6 +55,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.1'
 end
 
 group :development do
