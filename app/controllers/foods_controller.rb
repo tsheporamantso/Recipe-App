@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = current_user.foods.build(food_parama)
+    @food = current_user.foods.build(food_params)
     if @food.save
       redirect_to user_foods_path(current_user)
     else
