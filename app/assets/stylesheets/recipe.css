@@ -1,0 +1,26 @@
+.container {
+  align-items: center;
+  text-align: center;
+}
+
+.recipe-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 0 80px;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 700;
+}
