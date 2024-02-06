@@ -1,0 +1,20 @@
+<section>
+  <h2>Public Recipes</h2>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <%= link_to user_recipe_path(recipe.user_id, recipe.id) do %>
+        <li>
+          <div>
+            <p> <%= recipe.name %> </p>
+            <span>By: <%= recipe.user.name %> </span>
+          </div>
+
+          <div>
+            <span>Total food items: <%= recipe.recipe_foods.count %> </span>
+            <span>Total price: $200 </span>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</section>
