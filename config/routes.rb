@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'public_recipes/index'
   devise_for :users
   root to: "users#index"
 
