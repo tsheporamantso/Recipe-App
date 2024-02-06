@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @foods = @user.foods 
+    @foods = @user.foods
   end
 
   def new
