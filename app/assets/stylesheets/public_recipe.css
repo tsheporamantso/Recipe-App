@@ -1,0 +1,62 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+section h2 {
+  margin-bottom: 14px;
+}
+
+.main-public {
+  list-style: none;
+}
+
+.main-public a {
+  text-decoration: none;
+  color: #2e2f30;
+}
+
+.list-item {
+  border: 2px solid #2e2f30;
+  border-radius: 8px;
+  width: 550px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  padding: 10px 22px;
+  margin: 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 6rem 10px 0;
+}
+
+.info p {
+  font-size: 1.512rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.info span {
+  font-size: 1.125rem;
+}
+
+.info .btn-remove {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 0.825rem;
+  padding: 5px 0;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 0.925rem;
+  font-weight: 500;
+}
