@@ -6,7 +6,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   def show
-    @recipe_foods = RecipeFood.find(params[:id])
+    @recipe_foods = RecipeFood.find_by_id(params[:id])
 
     return unless @recipe_foods.nil?
 
