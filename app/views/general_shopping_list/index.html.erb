@@ -1,0 +1,31 @@
+<section>
+  <h2>Shopping List</h2>
+  <div class="food-details">
+    <h5>Amount of food items to buy: <%= @foods.size %></h5>
+    <h5>Total value of food needed: $<%= @total %></h5>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @foods.empty? %>
+        <tr>
+          <td colspan="3" class="none">No shopping list</td>
+        </tr>
+      <% end %>
+      <% @foods.each do |food| %>
+        <% food_quantity = RecipeFood.joins(:food).where(food_id: food.id).sum('quantity') %>
+        <tr>
+          <td> <%= food.name %> </td>
+          <td> <%= food_quantity %> <%= food.measurement_unit %> </td>
+          <td> $<%= food.price %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
