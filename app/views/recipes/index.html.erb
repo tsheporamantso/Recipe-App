@@ -1,17 +1,24 @@
 <%= stylesheet_link_tag 'recipe_details' %>
 
 <div class="container">
-  <h1>Recipes!</h1>
-  <% @recipes.each do |recipe| %>
-    <div class='recipe-container'>
-      <div class="recipe-info">
-        <%= link_to recipe.name, user_recipe_path(@user, recipe) %>
-        <%= button_to 'Remove', user_recipe_path(@user, recipe), method: :delete%>
-      </div>
-      <div>
-        <p><%= recipe.description %></p>
-      </div>
-    </div>
-    <% end %>
-    <%= link_to 'New Recipe', new_user_recipe_path(@user) %> 
+  <h1>Recipes</h1>
+  <table class="recipe-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= link_to recipe.name, user_recipe_path(@user, recipe) %></td>
+          <td><%= truncate(recipe.description, length: 30) %></td>
+          <td><%= button_to "Remove", user_recipe_path(@user, recipe), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New Recipe", new_user_recipe_path(@user), class: "add-food-link" %>
 </div>
