@@ -1,6 +1,6 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_user_and_recipe
-  
+
   def index
     @recipe_foods = RecipeFood.all
   end
@@ -28,7 +28,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   private
-  
+
   def set_user_and_recipe
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.find(params[:recipe_id])
