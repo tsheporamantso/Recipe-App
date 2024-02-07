@@ -6,10 +6,7 @@
     <div class='recipe-container'>
       <div class="recipe-info">
         <%= link_to recipe.name, user_recipe_path(@user, recipe) %>
-        <%= button_to 'Remove', user_recipe_path(@user, recipe), data: {
-          turbo_method: :delete,
-          turbo_confirm: 'Are you sure?'
-        } %>
+        <%= button_to 'Remove', user_recipe_path(@user, recipe), method: :delete%>
       </div>
       <div>
         <p><%= recipe.description %></p>
