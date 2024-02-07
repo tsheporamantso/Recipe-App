@@ -1,0 +1,43 @@
+section h2 {
+  font-size: 2.025rem;
+}
+
+.food-details {
+  display: flex;
+  gap: 16rem;
+  padding: 16px 0;
+  font-size: 1.625rem;
+}
+
+table,
+th,
+td {
+  border: 2px solid #2e2f30;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table {
+  width: 550px;
+  margin-top: 20px;
+}
+
+th {
+  padding: 0 5px;
+  background: #8a8888;
+}
+
+td {
+  padding: 7px 5px;
+}
+
+tr:nth-child(2n+1) {
+  background: #dcdcdc;
+}
+
+.none {
+  text-align: center;
+  font-size: 1.325rem;
+  font-weight: 600;
+  padding: 12px 0;
+}
