@@ -1,0 +1,24 @@
+<section>
+  <h2>Public Recipes</h2>
+  <ul class="main-public">
+    <% @recipes.each do |recipe| %>
+      <%= link_to user_recipe_path(recipe.user_id, recipe.id) do %>
+        <li class="list-item">
+          <div class="info">
+            <p> <%= recipe.name %> </p>
+            <span>By: <%= recipe.user.name %> </span>
+
+            <% if recipe.user_id == current_user.id %>
+              <%= link_to 'remove', user_recipes_path, class: "btn-remove" , method: :delete %>
+            <% end %>
+          </div>
+
+          <div class="count">
+            <span>Total food items: <%= recipe.recipe_foods.count %> </span>
+            <span>Total price: $150 </span>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</section>
