@@ -1,19 +1,20 @@
+<%= stylesheet_link_tag 'recipe_details' %>
+
 <h1>Foods!</h1>
 
-<%= link_to 'Add food', new_user_food_path(@user) %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Measurement Unit</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Action</th>
-    </tr>
-  </thead>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Measurement Unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
   <tbody>
-    <% @foods.each do |food| %>
+    <% @food.each do |food| %>
       <tr>
         <td><%= food.name %></td>
         <td><%= food.measurement_unit %></td>
@@ -23,4 +24,8 @@
       </tr>  
     <% end %>
   </tbody>
-</table>
+  </table>
+  <%= link_to 'Add food', new_user_food_path(@user), class: 'add-food-link' %>
+</div>
+
+

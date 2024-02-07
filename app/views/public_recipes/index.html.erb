@@ -1,3 +1,4 @@
+
 <section>
   <h2>Public Recipes</h2>
   <ul class="main-public">
@@ -9,7 +10,7 @@
             <span>By: <%= recipe.user.name %> </span>
 
             <% if recipe.user_id == current_user.id %>
-              <%= link_to 'remove', user_recipes_path, class: "btn-remove" , method: :delete %>
+              <%= link_to 'remove', user_recipes_path(recipe.user_id), class: "btn-remove" , method: :delete %>
             <% end %>
           </div>
 
@@ -22,3 +23,4 @@
     <% end %>
   </ul>
 </section>
+

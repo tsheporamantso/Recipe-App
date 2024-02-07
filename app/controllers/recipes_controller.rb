@@ -5,8 +5,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @recipe = Recipe.find(params[:id])
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.find(params[:id])
   end
 
   def new
@@ -19,14 +19,28 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to user_recipes_path(current_user)
     else
-      render :new, status: :unprocessable_entity
+      puts @recipe.errors.full_messages
+      render :new
     end
   end
 
   def destroy
-    @recipe = current_user.recipes.find(params[:id])
+    @recipe = current_user.recipes.includes(:recipe_foods).find(params[:id])
+    RecipeFood.where(recipe_id: @recipe.id).destroy_all
     @recipe.destroy
-    redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully deleted.'
+
+    redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully destroyed.'
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      redirect_to user_recipe_path(@user, @recipe), notice: 'Recipe was successfully updated.'
+    else
+      render :show
+    end
   end
 
   private

@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'registration' %>
+<%= stylesheet_link_tag 'recipe_details' %>
 
 <div class="container">
   <h2>Sign in</h2>
@@ -6,12 +6,12 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password", class: 'input' %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
@@ -22,7 +22,7 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit "Sign in", class: 'btns' %>
+      <%= f.submit "Sign in" %>
     </div>
   <% end %>
 

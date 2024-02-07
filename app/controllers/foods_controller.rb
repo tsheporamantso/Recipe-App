@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @foods = @user.foods
+    @food = @user.foods
   end
 
   def new
@@ -14,7 +14,7 @@ class FoodsController < ApplicationController
     if @food.save
       redirect_to user_foods_path(current_user)
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 

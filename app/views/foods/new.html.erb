@@ -1,9 +1,11 @@
+<%= stylesheet_link_tag 'recipe_details' %>
+
 <h1>Add food</h1>
 
-<%= form_with model: @food, url: user_foods_path(@user), local: true, method: :post do |form| %>
+<%= form_with(model: @food, url: user_foods_path(@user), local: true, method: :post) do |form| %>
   <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, autocomplete: 'off' %>
   </div>
 
   <div>
@@ -12,13 +14,13 @@
   </div>
   
   <div>
-    <%= form.label :price %><br>
-    <%= form.text_field :price %>
+    <%= form.label :price %> <br>
+    <%= form.number_field :price, in: 1..1000, step: 1, autocomplete: "off" %>
   </div>
 
   <div>
-    <%= form.label :quantity %><br>
-    <%= form.text_field :quantity %>
+    <%= form.label :quantity %> <br>
+    <%= form.number_field :quantity, in: 1..1000, step: 1, autocomplete: "off" %>
   </div>
 
   <div>
