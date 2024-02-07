@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'recipe_details' %>
+
 <h1>Add food</h1>
 
 <%= form_with(model: @food, url: user_foods_path(@user), local: true, method: :post) do |form| %>

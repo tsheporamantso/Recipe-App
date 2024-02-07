@@ -124,3 +124,55 @@ input[type="submit"]:hover {
 .food {
   padding: 12px;
 }
+
+/* Style for foods */
+
+h1 {
+  text-align: center;
+  margin: 12px;
+}
+
+table {
+  max-width: 70%;
+  min-width: 25%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto 20px;
+}
+
+thead {
+  background-color: #b89164;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.add-food-link {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
