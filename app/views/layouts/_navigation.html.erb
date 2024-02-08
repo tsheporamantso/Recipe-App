@@ -4,6 +4,7 @@
           <%= link_to 'My Foods', user_foods_path(current_user) %>
           <%= link_to 'My Recipes', user_recipes_path(current_user) %>
           <%= link_to 'Public Recipes', public_recipes_path %>
+          <%= link_to 'General Shopping List', user_general_shopping_list_index_path(current_user.id) %>
         <% end %>
       </div>
 
