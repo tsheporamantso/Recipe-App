@@ -8,5 +8,35 @@ RSpec.describe Food, type: :model do
       
       expect(food).to be_valid
     end
+
+    it 'should not be valid without the name' do
+      food = Food.new(name: nil)
+      expect(food).to_not be_valid
+    end
+
+    it 'should not be valid without measurement unit' do
+      food = Food.new(measurement_unit: nil)
+      expect(food).to_not be_valid
+    end
+
+    it 'should not be valid without price' do
+      food = Food.new(price: nil)
+      expect(food).to_not be_valid
+    end
+
+    it 'should not be valid with negative price' do
+      food = Food.new(price: -1)
+      expect(food).to_not be_valid
+    end
+
+    it 'should not be valid without quantity' do
+      food = Food.new(quantity: nil)
+      expect(food).to_not be_valid
+    end
+
+    it 'should not be valid with negative quantity' do
+      food = Food.new(quantity: -1)
+      expect(food).to_not be_valid
+    end
   end
 end
