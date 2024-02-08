@@ -31,11 +31,11 @@ RSpec.describe 'Recipe show view page', type: :feature do
     expect(page).to have_content(@recipe.cooking_time)
   end
 
-  it 'should have a checkbox to mark the recipe as public, and it should change when enabled' do
-    expect(page).to have_selector("input[type='checkbox'][id='recipe_public']", visible: :all)
-    expect(find("input#recipe_public", visible: :all)).not_to be_checked
-  
-    check('recipe_public')
-    expect(find("input#recipe_public", visible: :all)).to be_checked
+  it 'should have a button to add ingredients' do
+    expect(page).to have_button('Add ingredients')
+  end
+
+  it 'should have a button to generate a shopping list' do
+    expect(page).to have_button('Generate Shopping List')
   end
 end
