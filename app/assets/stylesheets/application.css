@@ -1,14 +1,5 @@
 @import 'public_recipe.css';
 @import 'general_shopping_list.css';
-@import 'navbar.css';
+@import 'recipe_details.css';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Ubuntu', sans-serif;
-  background-color: #fff;
-}
