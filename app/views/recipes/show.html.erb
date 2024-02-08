@@ -29,3 +29,27 @@
     <%= button_to "Add ingredients", new_user_recipe_recipe_food_path(@user, @recipe), class: "add-food-link",
                   method: :get, disabled: @recipe.user != current_user  %>
   </div>
+
+  <div>
+  <table>
+    <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>    
+      <% @recipe_foods.each do |recipe_food| %>
+        <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %> </td>
+            <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
+            <td><%= button_to 'Remove', user_recipe_recipe_food_path(@user, @recipe, recipe_food), method: :delete, disabled: @user != current_user %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
