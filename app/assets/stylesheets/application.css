@@ -1,5 +1,6 @@
 @import 'public_recipe.css';
 @import 'general_shopping_list.css';
+@import 'navbar.css';
 
 * {
   margin: 0;
