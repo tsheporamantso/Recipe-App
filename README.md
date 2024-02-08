@@ -32,7 +32,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog App <a name="about-project"></a>
+# 📖 Recipe App <a name="about-project"></a>
 
 **Recipe App** The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 
@@ -93,8 +93,8 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  mkdir folder_name
-  cd folder_name
+  mkdir Recipe-App
+  cd Recipe-App
   git clone git@github.com:tsheporamantso/Recipe-App.git
 ```
 
@@ -155,10 +155,10 @@ Not deployed
 - Twitter: [@ramgt001](https://twitter.com/ramgt001)
 - LinkedIn: [Tshepo Gladwin Ramantso](https://www.linkedin.com/in/tshepo-ramantso-b6a35433/)
 
-👤 **May Pyone**
+👤 **Fombi Favour**
 
-- GitHub: [@May Pyone](https://github.com/MayPyone/)
-- LinkedIn: [May Pyone](https://www.linkedin.com/in/may-pyone-9439961a3/)
+- GitHub: [Fombi-Favour](https://github.com/Fombi-Favour)
+- LinkedIn: [Fombi Favour](https://www.linkedin.com/in/fombi-favour/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,6 +213,6 @@ I would like to thank:
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/tsheporamantso/Recipe-App/blob/4d6585a6d902abdd92bd0f9715afbe7c4901625b/LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
