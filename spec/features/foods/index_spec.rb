@@ -39,7 +39,9 @@ RSpec.describe 'Testing Food#index view, it should', type: :feature do
 
   it 'display button to remove food' do
     @user.foods.each do |food|
-      expect(page).to have_selector("form[action='#{user_food_path(@user, food)}'][method='post'] button[type='submit']", text: 'Remove')
+      expect(page).to have_selector(
+        "form[action='#{user_food_path(@user, food)}'][method='post'] button[type='submit']", text: 'Remove'
+      )
     end
   end
 
@@ -47,5 +49,4 @@ RSpec.describe 'Testing Food#index view, it should', type: :feature do
     click_link('Add food', href: new_user_food_path(@user))
     expect(page).to have_current_path(new_user_food_path(@user))
   end
-
 end

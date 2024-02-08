@@ -4,22 +4,22 @@ RSpec.describe RecipeFood, type: :model do
   before(:each) do
     @user = User.create(email: 'tgramantso@gmail.com', password: 'password123')
     @recipe = Recipe.new(
-      name: 'CheeseCake', 
-      preparation_time: 10, 
-      cooking_time: 5, 
+      name: 'CheeseCake',
+      preparation_time: 10,
+      cooking_time: 5,
       description: 'Delicious with cream',
-      public: true, 
+      public: true,
       user: @user
-      )
-      @food = Food.new(
-        name: 'cheese',
-        quantity: 100
-      )
-      @recipe_food = RecipeFood.new(
-        quantity: 100,
-        recipe: @recipe,
-        food: @food
-      )
+    )
+    @food = Food.new(
+      name: 'cheese',
+      quantity: 100
+    )
+    @recipe_food = RecipeFood.new(
+      quantity: 100,
+      recipe: @recipe,
+      food: @food
+    )
   end
 
   describe 'validations' do

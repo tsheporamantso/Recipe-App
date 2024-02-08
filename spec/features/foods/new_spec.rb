@@ -25,5 +25,3 @@ RSpec.describe 'Food new view, it should', type: :feature do
     expect(page).to have_content('Test Food')
   end
 end
-
-

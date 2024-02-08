@@ -3,17 +3,18 @@ require 'rails_helper'
 RSpec.describe Recipe, type: :model do
   before(:each) do
     @user = User.create(
-      email: 'tgramantso@gmail.com', 
-      password: 'password123')
+      email: 'tgramantso@gmail.com',
+      password: 'password123'
+    )
 
     @recipe = Recipe.new(
-      name: 'CheeseCake', 
-      preparation_time: 10, 
-      cooking_time: 5, 
+      name: 'CheeseCake',
+      preparation_time: 10,
+      cooking_time: 5,
       description: 'Delicious with cream',
-      public: true, 
+      public: true,
       user: @user
-      )
+    )
   end
   describe 'validations' do
     it 'should be valid with valid attributes' do
