@@ -23,7 +23,7 @@
   </div>
 
   <div class="btns">
-    <%= button_to "Generate Shopping List", "", class: "add-food-link"%>
+    <%= button_to "Generate Shopping List", user_general_shopping_list_index_path(current_user.id), method: :get, class: "add-food-link"%>
     <%= button_to "Add ingredients", new_user_recipe_recipe_food_path(@user, @recipe), class: "add-food-link",
                   method: :get, disabled: @recipe.user != current_user  %>
   </div>
