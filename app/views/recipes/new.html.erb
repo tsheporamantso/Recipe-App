@@ -1,0 +1,41 @@
+<% if @recipe.errors.any? %>
+  <h2>The following errors prevented recipe from being created!</h2>
+  <% @recipe.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
+<div class="container">
+  <h1>Create your recipe</h1>
+
+  <%= form_with(model: @recipe, url:user_recipes_path(current_user.id), local: true, method: :post) do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name, autocomplete: 'off' %>
+    </div>
+
+    <div>
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      <%= form.label :preparation_time %><br>
+      <%= form.number_field :preparation_time, in: 1..1000, step: 1, autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.label :cooking_time %><br>
+      <%= form.number_field :cooking_time, in: 1..1000, step: 1, autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.label :public %><br>
+      <%= form.check_box :public %>
+    </div>
+
+    <div>
+      <%= form.submit class: 'button' %>
+    </div>
+  <% end %>
+</div>

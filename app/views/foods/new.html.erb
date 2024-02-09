@@ -1,0 +1,36 @@
+<% if @food.errors.any? %>
+  <h2>The following errors prevented Food from being added!</h2>
+  <% @food.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>  
+<% end %>
+
+<div class="container">
+  <h1>Add food</h1>
+
+  <%= form_with(model: @food, url: user_foods_path(current_user.id), local: true, method: :post) do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name, autocomplete: 'off' %>
+    </div>
+
+    <div>
+      <%= form.label :measurement_unit %><br>
+      <%= form.select :measurement_unit, ['mg', 'g', 'kg', 'oz', 'lb', 'units'] %>
+    </div>
+    
+    <div>
+      <%= form.label :price %> <br>
+      <%= form.number_field :price, in: 1..1000, step: 1, autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.label :quantity %> <br>
+      <%= form.number_field :quantity, in: 1..1000, step: 1, autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.submit %>	
+    </div>
+  <% end %>
+</div>
