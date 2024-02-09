@@ -1,7 +1,14 @@
+<% if @recipe.errors.any? %>
+  <h2>The following errors prevented recipe from being created!</h2>
+  <% @recipe.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
 <div class="container">
   <h1>Create your recipe</h1>
 
-  <%= form_with(model: @recipe, url:user_recipes_path(@user), local: true, method: :post) do |form| %>
+  <%= form_with(model: @recipe, url:user_recipes_path(current_user.id), local: true, method: :post) do |form| %>
     <div>
       <%= form.label :name %><br>
       <%= form.text_field :name, autocomplete: 'off' %>
