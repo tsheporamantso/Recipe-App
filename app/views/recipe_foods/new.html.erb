@@ -1,7 +1,7 @@
 <% if @recipe_food.errors.any? %>
   <h2>The following errors prevented recipe_food from being created!</h2>
   <% @recipe_food.errors.full_messages.each do |message| %>
-    <%= message %>
+    <li><%= message %></li>
   <% end %>  
 <% end %>
 
