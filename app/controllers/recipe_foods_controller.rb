@@ -27,6 +27,13 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    @recipe_food.destroy
+
+    redirect_to user_recipe_path(@user, @recipe), notice: 'Ingredient deleted successfully'
+  end
+
   private
 
   def set_user_and_recipe
