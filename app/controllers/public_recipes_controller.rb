@@ -7,4 +7,12 @@ class PublicRecipesController < ApplicationController
       @total += food.price
     end
   end
+
+  def destroy
+    @recipe = current_user.recipes.includes(:recipe_foods).find(params[:id])
+    RecipeFood.where(recipe_id: @recipe.id).destroy_all
+    @recipe.destroy
+
+    redirect_to public_recipes_path, notice: 'Recipe was successfully destroyed.'
+  end
 end

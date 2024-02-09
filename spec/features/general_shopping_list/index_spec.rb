@@ -1,26 +1,17 @@
 require 'rails_helper'
 
 RSpec.feature 'General_Shopping_List#index', type: :feature do
-  background do
-    visit new_user_session_path
-
-    @user = User.create(name: 'Sasha', email: 'sasha12@gmail.com', password: 'qwerty')
-    @recipe = Recipe.create(name: 'Curry', description: 'Very nice one', cooking_time: 10, preparation_time: 20,
-                            public: true, user_id: @user.id)
-    @food = Food.create(name: 'Mukimo', measurement_unit: 'grams', price: 50, user_id: @user.id)
-
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
-
-    click_button 'Sign In'
-    visit authenticated_root_path
+  before(:each) do
+    @user = User.create(name: 'Tshepo', email: 'example@test.com', password: '123456')
+    sign_in @user
+    @food = Food.create(name: 'Test Food', measurement_unit: 'test', price: 10, quantity: 20, user_id: @user.id)
+    5.times { |i| Food.create(name: "Food ##{i}", measurement_unit: 'unit', price: 1, quantity: 10, user_id: @user.id) }
+    visit user_foods_path(@user)
   end
 
   scenario 'show food details on page' do
-    qty = RecipeFood.joins(:food).where(food_id: food.id).sum('quantity')
-
     expect(page).to have_content @food.name
-    expect(page).to have_content qty
+    expect(page).to have_content @food.quantity
     expect(page).to have_content @food.measurement_unit
     expect(page).to have_content @food.price
     expect(page).not_to have_content 'Cheese'
