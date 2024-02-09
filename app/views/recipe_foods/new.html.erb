@@ -1,3 +1,12 @@
+<% if @recipe_food.errors.any? %>
+<h2>The following errors prevented recipe_food from being created!</h2>
+<% @recipe_food.errors.full_messages.each do |message| %>
+<ul>
+    <li><%= message %></li>
+  <% end %>  
+</ul>
+<% end %>
+
 <div class="form">
   <h1>Add the Ingredients of recipe</h1>
   <%= form_with(model: [@user, @recipe, @recipe_food], url: user_recipe_recipe_foods_path(@user, @recipe), local: true, method: :post) do |form| %>

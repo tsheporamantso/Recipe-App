@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
     @recipes = @user.recipes
@@ -20,8 +22,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to user_recipes_path(current_user)
     else
-      puts @recipe.errors.full_messages
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
