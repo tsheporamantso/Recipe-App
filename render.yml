@@ -1,12 +1,12 @@
 databases:
-  - name: gladwin_recipe_app
-    databaseName: gladwin_recipe_app
-    user: gladwin_recipe_app_user
+  - name: budget-app
+    databaseName: budget_app_pgnf
+    user: budget_app_pgnf_user
     plan: free
 
 services:
   - type: web
-    name: Recipe
+    name: RecipeApp
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
@@ -15,9 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: gladwin_recipe_app
+          name: budget-app
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-      - key: WEB_CONCURRENCY
-        value: 2 # sensible default
